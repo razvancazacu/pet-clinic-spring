@@ -2,12 +2,7 @@ package com.spring.petclinic.model;
 
 import java.util.Set;
 
-public class Vet {
-
-    private Long id;
-
-    private String firstName;
-    private String lastname;
+public class Vet extends Person {
 
     private Set<Speciality> specialities;
 }

@@ -3,9 +3,7 @@ package com.spring.petclinic.model;
 import java.util.Date;
 
 
-public class Pet {
-
-    private Long id;
+public class Pet extends BaseEntity {
 
     private String name;
     private Date birthDate;

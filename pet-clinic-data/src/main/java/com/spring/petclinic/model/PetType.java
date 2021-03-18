@@ -4,10 +4,7 @@ package com.spring.petclinic.model;
 import org.springframework.stereotype.Component;
 
 @Component
-public class PetType {
-
-
-    private Long id;
+public class PetType extends BaseEntity {
 
     private String name;
 

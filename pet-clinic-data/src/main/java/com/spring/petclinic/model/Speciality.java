@@ -1,8 +1,6 @@
 package com.spring.petclinic.model;
 
-public class Speciality {
-
-    private Long id;
+public class Speciality extends BaseEntity {
 
     private String name;
 

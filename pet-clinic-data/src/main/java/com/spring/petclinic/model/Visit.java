@@ -2,9 +2,7 @@ package com.spring.petclinic.model;
 
 import java.util.Date;
 
-public class Visit {
-
-    private Long id;
+public class Visit extends BaseEntity {
 
     private Pet pet;
     private Date date;

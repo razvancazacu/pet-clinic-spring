@@ -1,16 +1,10 @@
 package com.spring.petclinic.model;
 
-public class Owner {
-
-    private Long id;
-
-    private String firstName;
-    private String lastName;
+public class Owner extends Person {
 
     private String address;
     private String city;
     private String telephone;
-
 
 
 }
