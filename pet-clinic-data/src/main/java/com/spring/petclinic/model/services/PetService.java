@@ -1,16 +1,10 @@
 package com.spring.petclinic.model.services;
 
 
-import com.spring.petclinic.model.Vet;
+import com.spring.petclinic.model.Pet;
 
-import java.util.Set;
 
-public interface PetService {
+public interface PetService extends CrudService<Pet, Long> {
 
-    Vet findById(Long id);
-
-    Vet save(Vet owner);
-
-    Set<Vet> findAll();
 
 }
