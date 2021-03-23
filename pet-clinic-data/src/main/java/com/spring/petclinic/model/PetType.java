@@ -1,9 +1,11 @@
 package com.spring.petclinic.model;
 
 
-import org.springframework.stereotype.Component;
+import javax.persistence.Entity;
+import javax.persistence.Table;
 
-@Component
+@Entity
+@Table(name = "types")
 public class PetType extends BaseEntity {
 
     private String name;
