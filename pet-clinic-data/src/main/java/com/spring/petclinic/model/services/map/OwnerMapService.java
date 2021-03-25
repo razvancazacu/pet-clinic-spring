@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Set;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 @Service
@@ -22,21 +23,6 @@ public class OwnerMapService extends AbstractMapService<Owner, Long> implements 
     public OwnerMapService(PetService petService, PetTypeService petTypeService) {
         this.petService = petService;
         this.petTypeService = petTypeService;
-    }
-
-    @Override
-    public Set<Owner> findAll() {
-        return super.findAll();
-    }
-
-    @Override
-    public void deleteById(Long id) {
-        super.deleteById(id);
-    }
-
-    @Override
-    public void delete(Owner object) {
-        super.delete(object);
     }
 
     @Override
@@ -67,11 +53,6 @@ public class OwnerMapService extends AbstractMapService<Owner, Long> implements 
     }
 
     @Override
-    public Owner findById(Long id) {
-        return super.findById(id);
-    }
-
-    @Override
     public Owner findByLastName(String lastName) {
         return this.findAll()
                 .stream()
@@ -82,6 +63,9 @@ public class OwnerMapService extends AbstractMapService<Owner, Long> implements 
 
     @Override
     public List<Owner> findAllByLastNameLike(String lastName) {
-        return null;
+        return this.findAll()
+                .stream()
+                .filter(owner -> owner.getLastName().contains(lastName))
+                .collect(Collectors.toList());
     }
 }
