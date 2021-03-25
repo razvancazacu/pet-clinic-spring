@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.MappedSuperclass;
+import javax.validation.constraints.NotEmpty;
 
 @Getter
 @Setter
@@ -13,7 +14,11 @@ import javax.persistence.MappedSuperclass;
 @AllArgsConstructor
 @MappedSuperclass
 public class Person extends BaseEntity{
+
+    @NotEmpty
     private String firstName;
+
+    @NotEmpty
     private String lastName;
 
     public Person(Long id, String firstName, String lastName) {
